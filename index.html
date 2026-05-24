@@ -261,15 +261,6 @@ document.getElementById('btn-submit').onclick = async () => {
   btn.textContent = '⏳ Submitting...';
 
   try {
-    // Attach photo data to each row
-    cards.forEach(card => {
-      const id = card.id.replace('pallet-', '');
-      const rowIndex = Array.from(cards).indexOf(card);
-      if (rows[rowIndex] && photoData[id] && photoData[id].length > 0) {
-        rows[rowIndex].photos = photoData[id];
-      }
-    });
-
     const response = await fetch(SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
